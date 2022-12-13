@@ -1,0 +1,16 @@
+apiVersion: apps.danielhu.cn/v1
+kind: Application
+metadata:
+  name: application-sample
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80

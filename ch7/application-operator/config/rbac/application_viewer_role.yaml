@@ -1,0 +1,20 @@
+# permissions for end users to view applications.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: application-viewer-role
+rules:
+- apiGroups:
+  - apps.danielhu.cn
+  resources:
+  - applications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.danielhu.cn
+  resources:
+  - applications/status
+  verbs:
+  - get
